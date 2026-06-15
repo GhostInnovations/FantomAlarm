@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en" >
+  <head>
+    <meta charset="UTF-8">
+    <title>F.A.N.T.O.M. Gallery</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="/bootstrap_theme/bootstrap.css" rel="stylesheet" type="text/css">
+    <link rel="shortcut icon" href="/App/images/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="./style.css">
+    <script>
+      function ToggleDropdown() {
+          document.getElementById("navbarColor01").classList.toggle("collapse");
+      }
+    </script> 
+  </head>
+  <body>
+
+    <header class="fixed-top">
+      <nav class="bg-black navbar navbar-dark navbar-expand-lg" data-pg-ia-hide>
+          <div class="container"><a class="fw-bold navbar-brand text-uppercase" href="/">FANTOM</a>
+              <button onclick="ToggleDropdown()" class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarColor01">
+                  <ul class="ms-auto navbar-nav">
+                      <li class="nav-item"><a class="nav-link" aria-current="page" href="/">Home</a>
+                    </li>
+                      <li class="nav-item"><a class="nav-link" href="/App/">App</a>
+                      </li>
+                      <li class="nav-item"><a class="nav-link" href="/Timeline/">Timeline</a>
+                      </li>
+                      <li class="nav-item"><a class="nav-link active" href="/Gallery/">Gallery</a>
+                      </li>
+                  </ul>
+              </div>
+          </div>
+      </nav>
+  </header>
+    <div id="mz-gallery-container">
+      <div id="mz-gallery">
+        <figure>
+          <img src="/assets/images/PolyPoints/Base App.png" alt="Base App" width="700" height="700">
+          <figcaption>Base App</figcaption>
+        </figure>
+
+        <figure>
+          <img src="/assets/images/PolyPoints/1PolyPoint.png" alt="1 Point" width="700" height="700">
+          <figcaption>1 Point</figcaption>
+        </figure>
+
+        <figure>
+          <img src="/assets/images/PolyPoints/3PolyPoint.png" alt="3 Points" width="700" height="700">
+          <figcaption>3 Points</figcaption>
+        </figure>
+
+        <figure>
+          <img src="/assets/images/PolyPoints/5PolyPoint.png" alt="5 Points" width="700" height="700">
+          <figcaption>5 Points</figcaption>
+        </figure>
+
+        <figure>
+          <img src="/assets/images/PolyPoints/7PolyPoint.png" alt="7 Points" width="700" height="700">
+          <figcaption>7 Points</figcaption>
+        </figure>
+
+        <figure>
+          <img src="/assets/images/PolyPoints/GPSHistory.png" alt="GPS History" width="700" height="700">
+          <figcaption>GPS History</figcaption>
+        </figure>
+        
+        <figure>
+          <img src="/assets/images/BluetoothMap.png" alt="Bluetooth Map" width="700" height="700">
+          <figcaption>Bluetooth Map</figcaption>
+        </figure>
+      </div>
+
+    </div>
+
+  </body>
+</html>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-6SE9CZSLQQ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-6SE9CZSLQQ');
+</script>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="mobile-wep-app-capable" content="yes">
+    <meta name="apple-mobile-wep-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="/assets/images/Backgrounds/Cooler Firey Ghost.png" type="image/x-icon">
+    <link rel="manifest" href="./CSS/manifest.json">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <link rel="stylesheet" href="./CSS/styles.css">
+    <script>navigator.serviceWorker.register("JS/service-worker.js")</script> 
+    <title>F.A.N.T.O.M. App</title>
+    <style>
+        canvas {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- <img id="background" src="/assets/images/Backgrounds/Mountain.jpg" alt="" title=""> -->
+
+    <div class="container" id="MainContent">
+        <div class="header">
+            <h1 class="Title" id="F.A.N.T.O.M. Title" >F . A . N . T . O . M</h1>
+        </div>
+        
+        <div class="input-group">
+            <label for="GPS Lat">GPS Lat</label>
+            <input type="number" id="GPS Lat" placeholder="Enter GPS Latitude" step="any" required max="90" required min="-90">
+        </div>
+        
+        <div class="input-group">
+            <label for="GPS Lon">GPS Lon</label>
+            <input type="number" id="GPS Lon" placeholder="Enter GPS Longitude" step="any" required max="180"min="-180">
+        </div> 
+        <div class="input-group">
+            <label for="Time">Time: (mins)</label>
+            <input type="number" id="Time" placeholder="Enter time of fire spread in minutes" step="any" required min="0">
+        </div>
+       
+        <button onclick="GenerateData()">Click Here To Submit Data</button>
+        
+        <div hidden id="Outputs">
+            <h2 class="Output">Output Content:</h2>
+            <p id="OutputText"></p>
+            <ul id="OutputList"></ul>
+            <div>
+                <div class="dropdown-container" id="toggleDropdownDiv">
+                    <h3>Show GPS History</h3>
+                    <span class="arrow right" id="arrow"></span>
+                </div>
+                <div class="dropdown-content" id="ShowGPSHistory">
+                    <h3>Newest</h3>
+                    <ul id="CordHistory"></ul>
+                    <h3>Oldest</h3>
+                </div>
+            </div>
+            <div id="FireMap"></div>
+            <button onclick="ClearData()">Clear Detection Points</button>
+        </div>
+    </div>
+    
+    <!-- 
+    
+    Ye old triangle background RIP 
+
+    A loving background and a wonderfull challenge
+    John McBack
+    July - August 2024
+
+    <canvas id="bgCanvas"></canvas>
+    <script src="https://d3js.org/d3-delaunay.v6.min.js"></script>
+    <script src="./JS/background.js"></script> 
+
+    -->
+
+    <script src="./JS/main.js"></script>
+    <script src="https://unpkg.com/@turf/turf/turf.min.js"></script>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/leaflet-draw@1.0.4/dist/leaflet.draw.js"></script>
+</body>
+</html>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-6SE9CZSLQQ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-6SE9CZSLQQ');
+</script>

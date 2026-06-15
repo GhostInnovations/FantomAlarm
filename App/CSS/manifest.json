@@ -1,0 +1,90 @@
+{
+"description": "F.A.N.T.O.M is an innovative fire detection and tracking system designed to enhance safety and response times in emergency situations. By utilizing advanced technology, F.A.N.T.O.M ensures that the precise location and details of a fire are swiftly communicated to both emergency responders and users, facilitating quick and efficient action.", 
+"categories": ["weather","productivity","health","utilities"],
+"screenshots": [
+  {
+    "src": "/assets/images/PolyPoints/Base App.png",
+    "sizes": "584x1160",
+    "type": "image/png",
+    "description": "A Picture of the first view of the app."
+  },
+  {
+    "src": "/assets/images/PolyPoints/3PolyPoints.png",
+    "sizes": "584x1160",
+    "type": "image/png",
+    "description": "Displaying the GPS History tool"
+  },
+  {
+    "src": "/assets/images/PolyPoints/1PolyPoint.png",
+    "sizes": "584x1160",
+    "type": "image/png",
+    "description": "Displaying the predicted area with 1 detection points"
+  },
+  {
+    "src": "/assets/images/PolyPoints/3PolyPoints.png",
+    "sizes": "584x1160",
+    "type": "image/png",
+    "description": "Displaying the predicted area with 3 detection points"
+  },
+  {
+    "src": "/assets/images/PolyPoints/5PolyPoints.png",
+    "sizes": "584x1160",
+    "type": "image/png",
+    "description": "Displaying the predicted area with 5 detection points"
+  },
+  {
+    "src": "/assets/images/PolyPoints/7PolyPoints.png",
+    "sizes": "631x836",
+    "type": "image/png",
+    "description": "Displaying the predicted area with 7 detection points"
+  },
+  {
+    "src": "/assets/images/BluetoothMap.png",
+    "sizes": "631x836",
+    "type": "image/png",
+    "description": "Map Of How it Works"
+  },
+  {
+    "src": "/assets/images/FantomRadarLogo.png",
+    "sizes": "631x836",
+    "type": "image/png",
+    "description": "Logo"
+  },
+  
+  {
+    "src": "/assets/images/Leaf.png",
+    "sizes": "631x836",
+    "type": "image/png",
+    "description": "Picture of leaf for the device"
+  },
+  {
+    "src": "/assets/images/Trunk.png",
+    "sizes": "631x836",
+    "type": "image/png",
+    "description": "Picutre of trunk for the device"
+  }
+
+], 
+  "name": "F.A.N.T.O.M.",
+  "short_name": "F.A.N.T.O.M.",
+  "icons": [
+    {
+      "src": "/App/images/icon_144x144.png",
+      "sizes": "144x144",
+      "type": "image/png"
+    },
+    {
+      "src": "/App/images/icon_512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#000000",
+  "background_color": "#000000",
+  "display": "standalone",
+  "orientation": "portrait",
+  "start_url": "/App/",
+  "lang": "en",
+  "dir": "ltr",
+  "id": "F.A.N.T.O.M."
+}

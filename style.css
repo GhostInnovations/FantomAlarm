@@ -1,0 +1,339 @@
+
+:root{
+    --app-button-background-color: #0051ff;
+    --app-button-text-color :#fff;    
+    --app-button-border-color :#090085;    
+    --app-button-background-hover-color: #4b84ff;
+    --app-button-text-hover-color :#fff;    
+    --app-button-border-hover-color :#24a7ff;    
+
+    --device-info-gradient-top: #72a1ff;
+    --device-info-gradient-bottom: #1100ff;
+    --device-info-hover-text-color: #fff;
+    --device-info-text-color: #000;
+
+    --social-background-color: #090085;
+    --social-fill-color: #ffffff;
+    --social-boarder-background-color: #000000; 
+    --social-hover-background-color: #fff;
+    --social-hover-fill-color: #090085;
+    --social-hover-boarder-background-color: #000; 
+
+    --newsletter-background-color: #004355;
+    --newsletter-shadow-color: #004355;
+    --newsletter-button-background-color: #72a1ff;
+    --newsletter-button-text-color: #000000;
+    --newsletter-button-background-hover-color: #1100ff;
+    --newsletter-button-text-hover-color: #ffffff;
+    --newsletter-input-placeholder-text-color: black;
+    --newsletter-input-border-color: black;
+
+    --page-background-color: #001d25;
+    --page-text-color: #fff;
+    --background-text-color: white;
+    --contact-details-text-color: #000;
+    --footer-background-color:: #fff;
+    --nav-bar-bottom-border-color: #00232c;
+    --image-hover-text-color: #fff;
+}
+
+.Newsletter {
+    margin: auto;
+    width: 50%;
+    background-color: #004355;
+    border-radius: 30px;
+    box-shadow: 0 0 100px #004355;
+    /* box-sizing: border-box; Include padding and border in width calculation */
+    padding: 10px;
+    padding-right: 50px;
+    padding-left: 50px;
+    max-width: max-content;
+}
+
+
+.NewsInput{
+    border-radius: 5px;
+    color: var(--newsletter-input-placeholder-text-color);
+    border-color: var(--newsletter-input-border-color);
+}
+
+@media (max-width: 992px){
+    .NewsInput{
+        width: 100%;
+    }
+    .Newsletter{
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
+
+
+.NewsInput::placeholder{
+    border-radius: 5px;
+    color: var(--newsletter-input-placeholder-text-color);
+    border-color: var(--newsletter-input-border-color);
+}
+
+.NewsButton{
+    border-radius: 10px;
+    border-color: var(--newsletter-button-background-hover-color);
+    background-color: var(--newsletter-button-background-color);
+    color: var(--newsletter-button-text-color);
+    padding: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.NewsButton:hover{
+    border-color: var(--newsletter-button-background-color);
+    background-color: var(--newsletter-button-background-hover-color);
+    color: var(--newsletter-button-text-hover-color);
+    transform: scale(1.2);
+}
+
+.contact-details{
+    color: var(--contact-details-text-color);
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--page-text-color);
+    text-align: justify;
+}
+
+a {
+    -webkit-transition: all 0.2s ease;
+    -o-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+    text-decoration: none;
+}
+
+nav.navbar {
+    border-bottom: 1px solid var(--nav-bar-bottom-border-color);
+}
+
+.banner-section {
+    position: relative;
+    overflow: hidden;
+}
+
+img.banner-image {
+    height: 100%;
+    width: 100%;
+    -o-object-fit: cover;
+    object-fit: cover;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.demo{
+    margin: auto;
+    display: block;
+}
+
+.banner-text {
+    margin: -5px 0;
+}
+
+.floating-title {
+    position: absolute;
+    top: 0%;
+    left: 50%;
+    font-size: 17vmin;
+    font-weight: 800;
+    opacity: 0.1;
+    max-width: 900px;
+    z-index: -2;
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+}
+
+main {
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+}
+
+a.event-main-link {
+    background: var(--device-info-gradient-top);
+    color: var(--device-info-text-color);
+    -webkit-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+a.event-main-link img {
+    height: 500px;
+    width: 100%;
+    -o-object-fit: cover;
+    object-fit: cover;
+}
+
+a.event-main-link:hover {
+    background: -webkit-linear-gradient(to bottom, var(--device-info-gradient-top), var(--device-info-gradient-bottom));
+    background: -o-linear-gradient(to bottom, var(--device-info-gradient-top), var(--device-info-gradient-bottom));
+    background: linear-gradient(to bottom, var(--device-info-gradient-top), var(--device-info-gradient-bottom));
+    background-color: var(--device-info-gradient-top);
+    color: var(--device-info-hover-text-color);
+}
+
+.h-scrolling-block {
+    width: 100%;
+}
+
+@media (min-width: 992px) {
+    .h-scrolling-block {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        z-index: -1;
+    }
+}
+
+.h-scrolling-block > .row {
+    min-width: 1200px;
+}
+
+.h-scrolling-block img {
+    height: 240px;
+    width: 100%;
+    -o-object-fit: cover;
+    object-fit: cover;
+    padding: 10px;
+    -webkit-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+.social-links a {
+    font-size: 1.5rem;
+    background-color: var(--social-background-color);
+    color: var(--social-fill-color);
+    border: 2px solid var(--social-boarder-background-color);
+}
+
+.social-links a:hover {
+    color: var(--social-hover-fill-color);
+    background-color: var(--social-hover-background-color);
+    border: 2px solid var(--social-hover-boarder-background-color);
+}
+
+
+.bg-black {
+    background-color: var(--page-background-color) !important;
+}
+
+.AppButt{
+    color: var(--app-button-text-color);
+    border-radius: 10px;
+    border-color: var(--app-button-border-color);
+    padding: 7px;
+    margin-top: 10px;
+    margin-bottom: 50px;
+    font-size: 1rem;
+    width: 100%; /* Adjust the width as necessary */
+    max-width: 100px;
+    height: auto; /* Adjust the height as necessary */
+    background-color: var(--app-button-background-color);
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.AppButt:hover{
+    padding: 7px;
+    color: var(--app-button-text-hover-color);
+    border-radius: 10px;
+    border-color: var(--app-button-border-hover-color);
+    font-size: 1.1rem;
+    background-color: var(--app-button-background-hover-color);
+    transform: scale(1.1);
+}
+
+/* Apple download button */
+.apple-button {
+    padding-top: 25px !important;
+    width: 100%; /* Adjust the width as necessary */
+    max-width: 200px;
+    height: auto; /* Adjust the height as necessary */
+}
+
+.image-teaser {
+    width: 100%;
+    max-width: 600px;
+    height: 600px;
+    overflow: hidden;
+    cursor: pointer;
+    position: relative;
+}
+
+.full-image {
+    width: 100%;
+    height: auto;
+}
+
+.image-teaser::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;  /* Cover the entire container */
+    pointer-events: none;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 70%, #001d25 0%);
+    filter: blur(15px); /* Blurring effect */
+    z-index: 1;
+}
+
+/* Container holding the image and the text */
+.background-container {
+    position: relative;
+    text-align: center;
+  }
+  
+/* Centered text */
+.background-centered-trans {
+    margin: 0;
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.hover-text{
+    font-size: 1rem;
+    padding-top: 50px;
+    color: var(--image-hover-text-color);
+    font-weight: 500;
+}
+
+@media (min-width: 992px) {
+    .hover-text{
+        font-size: 1rem;
+        color: var(--image-hover-text-color);
+        font-weight: 500;
+    }
+    
+}
+
+@media (max-width: 992px){
+    .apple-button {
+        padding-top: 0px !important;
+        width: 100%; /* Adjust the width as necessary */
+        max-width: 100px;
+        height: auto; /* Adjust the height as necessary */
+    }
+
+    .background-container{
+        position: relative;
+        text-align: center;
+    }
+
+    .background-centered-trans{
+        /* padding-top: 5px; */
+        position: absolute;
+        top: 15%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}

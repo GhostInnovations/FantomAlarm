@@ -1,0 +1,209 @@
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap'); /* Output Text*/
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap'); /* Output Title */
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap'); /* Button */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap'); /* Input text box*/
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&display=swap'); /* Input Labels */
+
+@font-face {
+    font-family: 'ITCMachine';
+    src: url('ITCMachine-Medium.eot');
+    src: url('ITCMachine-Medium.eot?#iefix') format('embedded-opentype'),
+        url('ITCMachine-Medium.woff2') format('woff2'),
+        url('ITCMachine-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+/* Colour Defining*/
+:root{
+    /* --main-text-color: #ff6f00;
+    --button-text-color: #ecfeff;
+    --button-background-color: #ff6f00;
+    --hover-button-text-color: #ecfeff;
+    --hover-button-background-color: #ff6f00;
+    --container-color: #00000080;
+    --input-border-color: #da3700; */
+    --main-text-color: #00ccff;
+    --button-text-color: #ffffff;
+    --button-background-color: #00ccff;
+    --hover-button-text-color: #ffffff;
+    --hover-button-background-color: #0084a5;
+    --container-color: #00000080;
+    --input-border-color: #0035ff;
+}
+
+
+
+h3{
+    text-align: left;
+}
+
+ul{ /* Output Content*/
+    text-align: left;
+    padding-left: 1em;
+    overflow-wrap: break-word;
+    font-family: "Comic Neue";
+    font-size: 1.5em;
+}
+
+/* List Item */
+li{
+    margin: 10px 0;
+}
+
+
+.Title{ /* F.A.N.T.O.M. Title */
+    font-family: ITCMachine;
+    text-align: center; /* Center align headings */
+    font-size: 2em;
+    margin: 10px; /* Remove margin */
+}
+
+.Output{ /* Output Title */
+    font-family: "Space Mono", sans-serif;
+}
+
+/* Body */
+body {
+    font-family: "Playwrite FR Moderne";
+    /* background-color: #2b132b !important;
+    background-color: #000; */
+    background-image: url("/assets/images/Backgrounds/fantomdashboard.gif");
+    background-size: cover;
+    background-clip: border-box;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center center; 
+    color: var(--main-text-color);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Main box outline */
+.container {
+    position: relative;
+    z-index: 2;
+    max-width: 100%;
+    width: 40em;
+    margin: 3%; /* Adjust margins for spacing */
+    padding: 20px; /* Adjust padding as needed */
+    background-color: var(--container-color);
+    border-radius: 30px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    box-sizing: border-box; /* Include padding and border in width calculation */
+}
+
+/* Banner */
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+/* Background */
+#bgCanvas {
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
+/* Fire map */
+#map{
+    height: 0;
+    width: 1%;
+    padding-bottom:1%;
+    border-radius: 100px;
+}
+
+/* Heading Two */
+h2 {
+    text-align: center; /* Center align headings */
+    font-size: 1.5em;
+}
+
+.input-group {
+    overflow: hidden;
+    margin-bottom: 10px;
+    display: flex; /* Added to align items */
+    font-size: 1.25em;
+}
+
+.input-group label {
+    font-family: 'Courier New', Courier, monospace;
+    flex: 1; /* Added to make labels take equal space */
+    margin-right: 10px; /* Added spacing between label and input */
+    text-align: center; /* Align labels to the right */
+}
+
+.input-group input[type="number"],
+.input-group input[type="text"],
+.input-group select {
+    flex: 2; /* Added to make inputs take remaining space */
+    padding: 8px;
+    font-size: 1.25em;
+    border: 1px solid var(--input-border-color);
+    border-radius: 5px;
+    box-sizing: border-box; /* Ensure padding is included in width calculation */
+}
+
+button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    font-size: 1.3em;
+    margin-top: 10px;
+    background-color: var(--button-background-color); /* Orange background */
+    color: var(--button-text-color); /* White text */
+    font-family: "Anton", sans-serif;
+    border: none; /* No border */
+    border-radius: 8px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s, transform 0.3s; /* Smooth transitions */
+}
+
+button:hover {
+    background-color: var(--hover-button-background-color); /* Darker orange on hover */
+    color: var(--hover-button-text-color);
+    transform: scale(1.05); /* Slightly larger on hover */
+}
+
+.dropdown-container {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+  }
+.arrow {
+    width: 10px;
+    height: 10px;
+    border: solid var(--button-text-color);
+    border-width: 0 2px 2px 0;
+    display: inline-block;
+    padding: 3px;
+    margin-left: 10px;
+    transition: transform 0.3s ease-out;
+}
+.down {
+    transform: rotate(45deg);
+}
+.right {
+    transform: rotate(-45deg);
+}
+.dropdown-content {
+    display: none;
+    max-height: 0;
+    transition: max-height 0.3s ease-out;
+}
+.dropdown-content.open {
+    display: block;
+    max-height: 500px; /* Adjust as needed */
+}
