@@ -1,94 +1,116 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="mobile-wep-app-capable" content="yes">
-    <meta name="apple-mobile-wep-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="default">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" href="/assets/images/Backgrounds/Cooler Firey Ghost.png" type="image/x-icon">
-    <link rel="manifest" href="./CSS/manifest.json">
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
-    <link rel="stylesheet" href="./CSS/styles.css">
-    <script>navigator.serviceWorker.register("JS/service-worker.js")</script> 
-    <title>F.A.N.T.O.M. App</title>
-    <style>
-        canvas {
-            display: block;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="FANTOM app demo for wildfire detection points, wind data and spread prediction.">
+  <title>FANTOM | App</title>
+  <link rel="icon" href="/App/images/favicon.png" type="image/x-icon">
+  <link rel="manifest" href="./CSS/manifest.json">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet-draw@1.0.4/dist/leaflet.draw.css">
+  <link rel="stylesheet" href="./CSS/styles.css">
 </head>
 <body>
-
-    <!-- <img id="background" src="/assets/images/Backgrounds/Mountain.jpg" alt="" title=""> -->
-
-    <div class="container" id="MainContent">
-        <div class="header">
-            <h1 class="Title" id="F.A.N.T.O.M. Title" >F . A . N . T . O . M</h1>
+  <header class="site-header app-site-header">
+    <nav class="navbar navbar-dark navbar-expand-lg" aria-label="Primary navigation">
+      <div class="container">
+        <a class="navbar-brand" href="/">FANTOM</a>
+        <button class="navbar-toggler" type="button" onclick="toggleNav()" aria-controls="siteNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+          <span class="sr-only">Toggle navigation</span>
+        </button>
+        <div class="navbar-collapse collapse" id="siteNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+            <li class="nav-item"><a class="nav-link active" href="/App/">App</a></li>
+            <li class="nav-item"><a class="nav-link" href="/Timeline/">Timeline</a></li>
+            <li class="nav-item"><a class="nav-link" href="/Gallery/">Gallery</a></li>
+            <li class="nav-item"><a class="nav-link" href="/#contact">Contact</a></li>
+          </ul>
         </div>
-        
-        <div class="input-group">
-            <label for="GPS Lat">GPS Lat</label>
-            <input type="number" id="GPS Lat" placeholder="Enter GPS Latitude" step="any" required max="90" required min="-90">
+      </div>
+    </nav>
+  </header>
+
+  <main class="app-shell" id="MainContent">
+    <section class="app-card input-card">
+      <p class="eyebrow">Field input</p>
+      <h1 class="Title" id="F.A.N.T.O.M. Title">FANTOM Fire Map</h1>
+      <p class="intro">Enter a detection point and a time window to generate a predicted spread view from live wind data.</p>
+
+      <div class="input-grid">
+        <label class="input-group" for="GPS Lat">
+          <span>GPS latitude</span>
+          <input type="number" id="GPS Lat" placeholder="Example: 51.5072" step="any" required max="90" min="-90">
+        </label>
+        <label class="input-group" for="GPS Lon">
+          <span>GPS longitude</span>
+          <input type="number" id="GPS Lon" placeholder="Example: -0.1276" step="any" required max="180" min="-180">
+        </label>
+        <label class="input-group" for="Time">
+          <span>Time window <small>(minutes)</small></span>
+          <input type="number" id="Time" placeholder="15" step="any" required min="0">
+        </label>
+      </div>
+
+      <button type="button" class="primary-action" onclick="GenerateData()">Generate prediction</button>
+    </section>
+
+    <section hidden id="Outputs" class="app-card output-card">
+      <div class="output-header">
+        <div>
+          <p class="eyebrow">Output</p>
+          <h2 class="Output">Detection summary</h2>
         </div>
-        
-        <div class="input-group">
-            <label for="GPS Lon">GPS Lon</label>
-            <input type="number" id="GPS Lon" placeholder="Enter GPS Longitude" step="any" required max="180"min="-180">
-        </div> 
-        <div class="input-group">
-            <label for="Time">Time: (mins)</label>
-            <input type="number" id="Time" placeholder="Enter time of fire spread in minutes" step="any" required min="0">
+        <button type="button" class="secondary-action" onclick="ClearData()">Clear points</button>
+      </div>
+      <p id="OutputText" role="status"></p>
+      <ul id="OutputList" class="summary-list"></ul>
+
+      <div class="history-panel">
+        <button type="button" class="history-toggle" id="toggleDropdownDiv" aria-expanded="false">
+          <span>GPS history</span>
+          <span class="arrow right" id="arrow"></span>
+        </button>
+        <div class="dropdown-content" id="ShowGPSHistory">
+          <p class="history-label">Newest first</p>
+          <ul id="CordHistory"></ul>
+          <p class="history-label">Oldest</p>
         </div>
-       
-        <button onclick="GenerateData()">Click Here To Submit Data</button>
-        
-        <div hidden id="Outputs">
-            <h2 class="Output">Output Content:</h2>
-            <p id="OutputText"></p>
-            <ul id="OutputList"></ul>
-            <div>
-                <div class="dropdown-container" id="toggleDropdownDiv">
-                    <h3>Show GPS History</h3>
-                    <span class="arrow right" id="arrow"></span>
-                </div>
-                <div class="dropdown-content" id="ShowGPSHistory">
-                    <h3>Newest</h3>
-                    <ul id="CordHistory"></ul>
-                    <h3>Oldest</h3>
-                </div>
-            </div>
-            <div id="FireMap"></div>
-            <button onclick="ClearData()">Clear Detection Points</button>
-        </div>
-    </div>
-    
-    <!-- 
-    
-    Ye old triangle background RIP 
+      </div>
 
-    A loving background and a wonderfull challenge
-    John McBack
-    July - August 2024
+      <div id="FireMap" aria-label="Fire spread map"></div>
+    </section>
+  </main>
 
-    <canvas id="bgCanvas"></canvas>
-    <script src="https://d3js.org/d3-delaunay.v6.min.js"></script>
-    <script src="./JS/background.js"></script> 
+  <script>
+    function toggleNav() {
+      var nav = document.getElementById('siteNav');
+      var toggle = document.querySelector('.navbar-toggler');
+      if (!nav) return;
+      nav.classList.toggle('collapse');
+      if (toggle) {
+        toggle.setAttribute('aria-expanded', String(!nav.classList.contains('collapse')));
+      }
+    }
 
-    -->
-
-    <script src="./JS/main.js"></script>
-    <script src="https://unpkg.com/@turf/turf/turf.min.js"></script>
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-    <script src="https://unpkg.com/leaflet-draw@1.0.4/dist/leaflet.draw.js"></script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('JS/service-worker.js').catch(function () {});
+    }
+  </script>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="https://unpkg.com/leaflet-draw@1.0.4/dist/leaflet.draw.js"></script>
+  <script src="./JS/main.js"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-6SE9CZSLQQ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-6SE9CZSLQQ');
+  </script>
 </body>
 </html>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-6SE9CZSLQQ"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-6SE9CZSLQQ');
-</script>
