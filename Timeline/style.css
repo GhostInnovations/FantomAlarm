@@ -1,0 +1,98 @@
+@import url('/style.css');
+
+body { background: var(--bg); }
+
+.timeline-hero {
+  padding: 150px 0 54px;
+  background:
+    linear-gradient(90deg, rgba(0, 29, 37, 0.74), rgba(0, 29, 37, 0.34)),
+    url('/assets/images/FireBanner.jpg') center / cover;
+}
+
+.timeline-hero h1 { max-width: 840px; }
+.timeline-hero p:not(.eyebrow) { max-width: 690px; font-size: 1.1rem; }
+
+.timeline-section { padding: 56px 0 110px; }
+
+.timeline {
+  --timeline-date-col: 150px;
+  --timeline-gap: 56px;
+  --timeline-line-x: calc(var(--timeline-date-col) + (var(--timeline-gap) / 2));
+  --timeline-marker-size: 16px;
+  position: relative;
+  display: grid;
+  gap: 1rem;
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: var(--timeline-line-x);
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: var(--line);
+  transform: translateX(-50%);
+}
+
+.timeline-item {
+  position: relative;
+  display: grid;
+  grid-template-columns: var(--timeline-date-col) minmax(0, 1fr);
+  gap: var(--timeline-gap);
+  align-items: center;
+}
+
+.timeline-item::before {
+  content: "";
+  position: absolute;
+  left: var(--timeline-line-x);
+  top: 50%;
+  width: var(--timeline-marker-size);
+  height: var(--timeline-marker-size);
+  background: var(--ember);
+  box-shadow: none;
+  transform: translate(-50%, -50%);
+}
+
+.timeline-item.future::before { background: var(--green); }
+
+.timeline-item time {
+  color: var(--amber);
+  font-weight: 850;
+  letter-spacing: 0.04em;
+  padding-top: 0;
+  align-self: center;
+}
+
+.timeline-item > div {
+  border: 0;
+  border-radius: var(--radius);
+  background: var(--panel-surface);
+  box-shadow: var(--shadow);
+  padding: 1.25rem 1.4rem;
+}
+
+.timeline-item h2 {
+  font-size: 1.45rem;
+  margin-bottom: 0.45rem;
+}
+
+.timeline-item p { margin-bottom: 0; }
+
+@media (max-width: 760px) {
+  .timeline-hero { padding-top: 125px; }
+  .timeline::before { left: 8px; transform: translateX(-50%); }
+  .timeline-item {
+    grid-template-columns: 1fr;
+    gap: 0.65rem;
+    padding-left: 32px;
+    align-items: start;
+  }
+  .timeline-item::before {
+    left: 8px;
+    top: 1rem;
+    transform: translate(-50%, -50%);
+  }
+  .timeline-item time { padding-top: 0; }
+}

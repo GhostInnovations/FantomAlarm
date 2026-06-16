@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="FANTOM development timeline from initial concept through prototypes and upcoming testing.">
+  <title>FANTOM | Timeline</title>
+  <link rel="shortcut icon" href="/App/images/favicon.png" type="image/x-icon">
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="navbar navbar-dark navbar-expand-lg" aria-label="Primary navigation">
+      <div class="container">
+        <a class="navbar-brand" href="/">FANTOM</a>
+        <button class="navbar-toggler" type="button" onclick="toggleNav()" aria-controls="siteNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+          <span class="sr-only">Toggle navigation</span>
+        </button>
+        <div class="navbar-collapse collapse" id="siteNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="/App/">App</a></li>
+            <li class="nav-item"><a class="nav-link active" href="/Timeline/">Timeline</a></li>
+            <li class="nav-item"><a class="nav-link" href="/Gallery/">Gallery</a></li>
+            <li class="nav-item"><a class="nav-link" href="/#contact">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="timeline-hero">
+      <div class="container">
+        <p class="eyebrow">Progress</p>
+        <h1>FANTOM development timeline</h1>
+        <p>Key milestones from concept research through prototype development, app creation and planned field testing.</p>
+      </div>
+    </section>
+
+    <section class="timeline-section">
+      <div class="container timeline">
+        <article class="timeline-item">
+          <time>December 2018</time>
+          <div>
+            <h2>Initial idea</h2>
+            <p>Brainstorming sessions explored current fire response limitations, available technology and potential approaches for faster detection.</p>
+          </div>
+        </article>
+        <article class="timeline-item">
+          <time>September 2019</time>
+          <div>
+            <h2>Market research</h2>
+            <p>Early research focused on technology fit, market need and the potential scalability of a fire detection network.</p>
+          </div>
+        </article>
+        <article class="timeline-item">
+          <time>November 2020</time>
+          <div>
+            <h2>Research and solutions</h2>
+            <p>Ghost Innovations commissioned reports covering current methods, technical requirements, potential solutions, products and parts.</p>
+          </div>
+        </article>
+        <article class="timeline-item">
+          <time>February 2021</time>
+          <div>
+            <h2>Infrared detection</h2>
+            <p>Ghost Innovations worked with a local prototype company to develop the custom infrared laser required for field detection.</p>
+          </div>
+        </article>
+        <article class="timeline-item">
+          <time>December 2023</time>
+          <div>
+            <h2>Trunk prototype</h2>
+            <p>The first base node prototype was outsourced to a local manufacturing company.</p>
+          </div>
+        </article>
+        <article class="timeline-item">
+          <time>June 2024</time>
+          <div>
+            <h2>FANTOM app</h2>
+            <p>The development team created the FANTOM app for map output, detection points, GPS history and spread visualisation.</p>
+          </div>
+        </article>
+        <article class="timeline-item future">
+          <time>Upcoming</time>
+          <div>
+            <h2>Leaf prototype</h2>
+            <p>Ghost Innovations plans to outsource the build of three leaf node prototypes.</p>
+          </div>
+        </article>
+        <article class="timeline-item future">
+          <time>Upcoming</time>
+          <div>
+            <h2>System testing</h2>
+            <p>The complete system will be tested across different locations and conditions.</p>
+          </div>
+        </article>
+        <article class="timeline-item future">
+          <time>Upcoming</time>
+          <div>
+            <h2>Multiple prototypes</h2>
+            <p>Thirty additional leaf node prototypes are planned to increase testing coverage.</p>
+          </div>
+        </article>
+        <article class="timeline-item future">
+          <time>Upcoming</time>
+          <div>
+            <h2>Large-scale testing</h2>
+            <p>Ghost Innovations plans a 12-month woodland test over a 10-acre area.</p>
+          </div>
+        </article>
+        <article class="timeline-item future">
+          <time>Upcoming</time>
+          <div>
+            <h2>Manufacture for global implementation</h2>
+            <p>The long-term goal is to manufacture FANTOM alarms for deployment in high-risk areas.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    function toggleNav() {
+      var nav = document.getElementById('siteNav');
+      var toggle = document.querySelector('.navbar-toggler');
+      if (!nav) return;
+      nav.classList.toggle('collapse');
+      if (toggle) {
+        toggle.setAttribute('aria-expanded', String(!nav.classList.contains('collapse')));
+      }
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,8 @@
+[{
+      "relation": ["delegate_permission/common.handle_all_urls"],
+      "target": {
+        "namespace": "android_app",
+        "package_name": "com.fantomalarm.twa",
+        "sha256_cert_fingerprints": ["7F:98:39:A9:92:D3:27:84:A4:C9:12:15:30:7D:8B:5A:BD:8E:FD:8D:80:00:3B:CB:27:AB:C4:55:53:0E:A4:7C"]
+      }
+    }]

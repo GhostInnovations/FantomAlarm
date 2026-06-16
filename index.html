@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="FANTOM is a solar-powered fire detection and tracking system for faster wildfire response.">
+  <title>FANTOM | Fire detection and tracking</title>
+  <link rel="icon" href="/App/images/favicon.png" type="image/x-icon">
+  <link href="/style.css" rel="stylesheet">
+</head>
+<body id="top">
+  <header class="site-header">
+    <nav class="navbar navbar-dark navbar-expand-lg">
+      <div class="container">
+        <a class="navbar-brand" href="/">FANTOM</a>
+        <button class="navbar-toggler" type="button" aria-controls="siteNav" aria-expanded="false" aria-label="Toggle navigation" onclick="toggleNav()">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="siteNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link active" href="/">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="/App/">App</a></li>
+            <li class="nav-item"><a class="nav-link" href="/Timeline/">Timeline</a></li>
+            <li class="nav-item"><a class="nav-link" href="/Gallery/">Gallery</a></li>
+            <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero-section scroll-hero" aria-label="FANTOM intro animation">
+      <h1 class="sr-only">FANTOM — fire detection and tracking</h1>
+      <div class="hero-sticky">
+        <img class="hero-image" src="/assets/images/FireBanner.jpg" alt="Forest fire at night">
+        <div class="hero-image-shade"></div>
+        <div class="hero-mask" aria-hidden="true">
+          <div class="hero-mask-fill"></div>
+          <img class="hero-logo" src="/assets/images/FANTOM.png" alt="">
+          <div class="hero-mask-fill"></div>
+        </div>
+        <p class="scroll-hint">Scroll to reveal</p>
+      </div>
+    </section>
+
+    <section class="section intro-section">
+      <div class="container two-column">
+        <div>
+          <p class="eyebrow">Built for fast response</p>
+          <h2>From detection to actionable fire data in minutes.</h2>
+          <p>FANTOM is designed to detect fires in remote, rural and urban areas using infrared technology. When a fire is detected, the system sends live information including location, temperature, speed and spread to the mobile app.</p>
+          <p>The app combines sensor data with terrain and wind conditions to visualise the fire area and project likely movement, giving teams a clearer view before they arrive on site.</p>
+        </div>
+        <figure class="image-card">
+          <img src="/assets/images/Backgrounds/fantomdashboard.png" alt="FANTOM dashboard preview">
+          <figcaption>FANTOM dashboard and response view</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section system-section" id="how-it-works">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">How it works</p>
+          <h2>A simple field network: one trunk, multiple leaves.</h2>
+        </div>
+        <div class="feature-grid">
+          <article class="feature-card">
+            <img src="/assets/images/Trunk.png" alt="FANTOM trunk base node">
+            <div>
+              <h3>Trunk base node</h3>
+              <p>The trunk contains fold-out solar cells, a lithium battery, infrared sensor, GPS tracker and Bluetooth receptor. It collects data from leaf nodes and relays it to the app.</p>
+            </div>
+          </article>
+          <article class="feature-card">
+            <img src="/assets/images/Leaf.png" alt="FANTOM leaf node">
+            <div>
+              <h3>Leaf nodes</h3>
+              <p>Leaf nodes are smaller solar-powered units that can be placed across a wider area. Each leaf can sync to the trunk or to another nearby leaf.</p>
+            </div>
+          </article>
+          <article class="feature-card">
+            <img src="/assets/images/BluetoothMap.png" alt="Bluetooth mesh map">
+            <div>
+              <h3>Mesh coverage</h3>
+              <p>Nodes can sync within roughly 1.5 km, creating a scalable detection net. More leaf nodes increase coverage and improve the quality of fire movement data.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section app-section">
+      <div class="container two-column reverse-on-mobile">
+        <div class="app-preview-grid">
+          <img src="/assets/images/PolyPoints/1PolyPoint.png" alt="FANTOM one point prediction screen">
+          <img src="/assets/images/PolyPoints/7PolyPoint.png" alt="FANTOM seven point prediction screen">
+        </div>
+        <div>
+          <p class="eyebrow">App preview</p>
+          <h2>Clear map outputs for detection points and predicted spread.</h2>
+          <p>The app shows current detection points, stored GPS history, the detected fire area and projected spread based on environmental conditions.</p>
+          <div class="store-links" aria-label="Download links">
+            <a href="https://www.apple.com/uk/app-store/" target="_blank" rel="noopener"><img src="/App/images/apple button.png" alt="Download on the App Store"></a>
+            <a href="https://play.google.com/" target="_blank" rel="noopener"><img src="/App/images/android button.png" alt="Get it on Google Play"></a>
+            <a href="https://www.meta.com/en-gb/experiences/" target="_blank" rel="noopener"><img src="/App/images/Meta-Logo.png" alt="Meta experiences"></a>
+          </div>
+          <a class="button button-secondary" href="/Gallery/">Open gallery</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section video-section">
+      <div class="container">
+        <div class="section-heading compact">
+          <p class="eyebrow">Demo</p>
+          <h2>Watch the FANTOM alarm demonstration.</h2>
+        </div>
+        <div class="video-frame">
+          <iframe title="Demonstration of FANTOM Alarm" src="https://www.youtube.com/embed/5ZIlMSrb9rw" allowfullscreen loading="lazy"></iframe>
+        </div>
+      </div>
+    </section>
+
+    <section class="section newsletter-section">
+      <div class="container newsletter-panel">
+        <div>
+          <p class="eyebrow">Updates</p>
+          <h2>Join the FANTOM newsletter.</h2>
+          <p>Get product updates, testing milestones and deployment news.</p>
+        </div>
+        <form method="post" action="https://list.fantomalarm.com/subscription/form" class="newsletter-form">
+          <input type="hidden" name="nonce">
+          <label>
+            <span>Email</span>
+            <input type="email" name="email" required placeholder="you@example.com">
+          </label>
+          <label>
+            <span>Name <small>(optional)</small></span>
+            <input type="text" name="name" placeholder="Your name">
+          </label>
+          <label class="check-row">
+            <input id="newsletter-list" type="checkbox" name="l" checked value="6318db3e-6b08-4da4-8396-59ca45a4864f">
+            <span>Newsletter</span>
+          </label>
+          <div class="h-captcha" data-size="compact" data-sitekey="a27e6d06-d3fa-4a68-8c2c-f03acce65328"></div>
+          <button class="button button-primary" type="submit">Join</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" id="contact">
+    <div class="container footer-grid">
+      <div>
+        <a class="footer-brand" href="#top">FANTOM</a>
+        <p>Fire detection, tracking and response intelligence.</p>
+      </div>
+      <div>
+        <h2>Get in touch</h2>
+        <a href="mailto:info@fantomalarm.com">info@fantomalarm.com</a>
+      </div>
+      <div class="footer-links">
+        <a href="https://x.com/Fantom_Alarm" target="_blank" rel="noopener">X</a>
+        <a href="https://www.instagram.com/fantomalarm/" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://www.tiktok.com/@fantomalarm" target="_blank" rel="noopener">TikTok</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://js.hcaptcha.com/1/api.js" async defer></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-6SE9CZSLQQ"></script>
+  <script src="/script/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="FANTOM app demo for wildfire detection points, wind data and spread prediction.">
+  <title>FANTOM | App</title>
+  <link rel="icon" href="/App/images/favicon.png" type="image/x-icon">
+  <link rel="manifest" href="./CSS/manifest.json">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet-draw@1.0.4/dist/leaflet.draw.css">
+  <link rel="stylesheet" href="./CSS/styles.css">
+</head>
+<body>
+  <header class="site-header app-site-header">
+    <nav class="navbar navbar-dark navbar-expand-lg" aria-label="Primary navigation">
+      <div class="container">
+        <a class="navbar-brand" href="/">FANTOM</a>
+        <button class="navbar-toggler" type="button" onclick="toggleNav()" aria-controls="siteNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+          <span class="sr-only">Toggle navigation</span>
+        </button>
+        <div class="navbar-collapse collapse" id="siteNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+            <li class="nav-item"><a class="nav-link active" href="/App/">App</a></li>
+            <li class="nav-item"><a class="nav-link" href="/Timeline/">Timeline</a></li>
+            <li class="nav-item"><a class="nav-link" href="/Gallery/">Gallery</a></li>
+            <li class="nav-item"><a class="nav-link" href="/#contact">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main class="app-shell" id="MainContent">
+    <section class="app-card input-card">
+      <p class="eyebrow">Field input</p>
+      <h1 class="Title" id="F.A.N.T.O.M. Title">FANTOM Fire Map</h1>
+      <p class="intro">Enter a detection point and a time window to generate a predicted spread view from live wind data.</p>
+
+      <div class="input-grid">
+        <label class="input-group" for="GPS Lat">
+          <span>GPS latitude</span>
+          <input type="number" id="GPS Lat" placeholder="Example: 51.5072" step="any" required max="90" min="-90">
+        </label>
+        <label class="input-group" for="GPS Lon">
+          <span>GPS longitude</span>
+          <input type="number" id="GPS Lon" placeholder="Example: -0.1276" step="any" required max="180" min="-180">
+        </label>
+        <label class="input-group" for="Time">
+          <span>Time window <small>(minutes)</small></span>
+          <input type="number" id="Time" placeholder="15" step="any" required min="0">
+        </label>
+      </div>
+
+      <button type="button" class="primary-action" onclick="GenerateData()">Generate prediction</button>
+    </section>
+
+    <section hidden id="Outputs" class="app-card output-card">
+      <div class="output-header">
+        <div>
+          <p class="eyebrow">Output</p>
+          <h2 class="Output">Detection summary</h2>
+        </div>
+        <button type="button" class="secondary-action" onclick="ClearData()">Clear points</button>
+      </div>
+      <p id="OutputText" role="status"></p>
+      <ul id="OutputList" class="summary-list"></ul>
+
+      <div class="history-panel">
+        <button type="button" class="history-toggle" id="toggleDropdownDiv" aria-expanded="false">
+          <span>GPS history</span>
+          <span class="arrow right" id="arrow"></span>
+        </button>
+        <div class="dropdown-content" id="ShowGPSHistory">
+          <p class="history-label">Newest first</p>
+          <ul id="CordHistory"></ul>
+          <p class="history-label">Oldest</p>
+        </div>
+      </div>
+
+      <div id="FireMap" aria-label="Fire spread map"></div>
+    </section>
+  </main>
+
+  <script>
+    function toggleNav() {
+      var nav = document.getElementById('siteNav');
+      var toggle = document.querySelector('.navbar-toggler');
+      if (!nav) return;
+      nav.classList.toggle('collapse');
+      if (toggle) {
+        toggle.setAttribute('aria-expanded', String(!nav.classList.contains('collapse')));
+      }
+    }
+
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('JS/service-worker.js').catch(function () {});
+    }
+  </script>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="https://unpkg.com/leaflet-draw@1.0.4/dist/leaflet.draw.js"></script>
+  <script src="./JS/main.js"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-6SE9CZSLQQ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-6SE9CZSLQQ');
+  </script>
+</body>
+</html>

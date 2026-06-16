@@ -1,0 +1,75 @@
+{
+  "name": "FANTOM",
+  "short_name": "FANTOM",
+  "description": "FANTOM is a fire detection and tracking system for live map output, GPS history and spread prediction.",
+  "categories": [
+    "weather",
+    "utilities",
+    "productivity"
+  ],
+  "start_url": "/App/",
+  "scope": "/App/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "theme_color": "#001d25",
+  "background_color": "#001d25",
+  "lang": "en",
+  "dir": "ltr",
+  "id": "FANTOM",
+  "icons": [
+    {
+      "src": "/App/images/icon_144x144.png",
+      "sizes": "144x144",
+      "type": "image/png"
+    },
+    {
+      "src": "/App/images/icon_512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/assets/images/PolyPoints/Base App.png",
+      "sizes": "762x547",
+      "type": "image/png",
+      "description": "Base app view"
+    },
+    {
+      "src": "/assets/images/PolyPoints/1PolyPoint.png",
+      "sizes": "584x1160",
+      "type": "image/png",
+      "description": "Predicted area with one detection point"
+    },
+    {
+      "src": "/assets/images/PolyPoints/3PolyPoint.png",
+      "sizes": "584x1160",
+      "type": "image/png",
+      "description": "Predicted area with three detection points"
+    },
+    {
+      "src": "/assets/images/PolyPoints/5PolyPoint.png",
+      "sizes": "584x1160",
+      "type": "image/png",
+      "description": "Predicted area with five detection points"
+    },
+    {
+      "src": "/assets/images/PolyPoints/7PolyPoint.png",
+      "sizes": "584x1160",
+      "type": "image/png",
+      "description": "Predicted area with seven detection points"
+    },
+    {
+      "src": "/assets/images/PolyPoints/GPSHistory.png",
+      "sizes": "427x518",
+      "type": "image/png",
+      "description": "GPS history tool"
+    },
+    {
+      "src": "/assets/images/BluetoothMap.png",
+      "sizes": "1080x1080",
+      "type": "image/png",
+      "description": "Mesh coverage map"
+    }
+  ]
+}
