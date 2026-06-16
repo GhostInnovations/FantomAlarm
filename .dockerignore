@@ -5,7 +5,6 @@
 Dockerfile
 docker-compose.yml
 compose.yml
-nginx.conf
 
 README.md
 README_PORTAINER.md
