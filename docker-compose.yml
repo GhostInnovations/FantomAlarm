@@ -1,0 +1,9 @@
+services:
+  fantom-website:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: fantom-website
+    restart: unless-stopped
+    ports:
+      - "5500:80"

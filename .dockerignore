@@ -1,0 +1,15 @@
+.git
+.github
+.gitignore
+
+Dockerfile
+docker-compose.yml
+compose.yml
+nginx.conf
+
+README.md
+README_PORTAINER.md
+
+node_modules
+.DS_Store
+Thumbs.db
