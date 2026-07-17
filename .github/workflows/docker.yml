@@ -3,7 +3,7 @@ name: Build Fantom website image
 on:
   push:
     branches:
-      - newSite
+      - oldSite
 
 permissions:
   contents: read
